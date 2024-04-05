@@ -1,0 +1,82 @@
+<div class="container">
+  <div [ngClass]="isSidePanelVisible? 'product-list': 'product-list-90'">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Product List</mat-card-title>
+        <button mat-button (click)="newProduct()" color="primary">New</button>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <mat-card >
+          <mat-card-header>
+            <mat-card-title>{{productObj.productName}}</mat-card-title>
+            <mat-card-subtitle>{{productObj.productShortName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img matCardImage src="Card wide image source">
+          <mat-card-content>
+            Text content
+          </mat-card-content>
+          <mat-card-actions align="start">
+            <!-- <button mat-button (click)="onAction1">Action1</button> -->
+
+          </mat-card-actions>
+          <mat-card-footer>
+            Footer
+          </mat-card-footer>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{productObj.productName}}</mat-card-title>
+            <mat-card-subtitle>{{productObj.productShortName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img matCardImage src="Card wide image source">
+          <mat-card-content>
+            Text content
+          </mat-card-content>
+          <mat-card-actions align="start">
+            <!-- <button mat-button (click)="onAction1">Action1</button> -->
+
+          </mat-card-actions>
+          <mat-card-footer>
+            Footer
+          </mat-card-footer>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{productObj.productName}}</mat-card-title>
+            <mat-card-subtitle>{{productObj.productShortName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img matCardImage src="Card wide image source">
+          <mat-card-content>
+            Text content
+          </mat-card-content>
+          <mat-card-actions align="start">
+            <!-- <button mat-button (click)="onAction1">Action1</button> -->
+
+          </mat-card-actions>
+          <mat-card-footer>
+            Footer
+          </mat-card-footer>
+        </mat-card>
+      </mat-card-content>
+      <mat-card-actions>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="product-new" *ngIf="isSidePanelVisible">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Product New</mat-card-title>
+        <button mat-button color="accent" (click)="close()">Cancel</button>
+
+      </mat-card-header>
+      <mat-card-content>
+
+      </mat-card-content>
+      <mat-card-actions>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
