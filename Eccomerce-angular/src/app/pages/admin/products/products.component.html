@@ -1,68 +1,57 @@
 <div class="container">
-  <div [ngClass]="isSidePanelVisible? 'product-list': 'product-list-90'">
+  <div [ngClass]="isSidePanelVisible ? 'product-list' : 'product-list-90'">
     <mat-card class="example-card">
       <mat-card-header>
         <mat-card-title>Product List</mat-card-title>
         <button mat-button (click)="newProduct()" color="primary">New</button>
       </mat-card-header>
       <mat-card-content class="card-content">
-        <mat-card >
+        <mat-card>
           <mat-card-header>
-            <mat-card-title>{{productObj.productName}}</mat-card-title>
-            <mat-card-subtitle>{{productObj.productShortName}}</mat-card-subtitle>
+            <mat-card-title>{{ productObj.productName }}</mat-card-title>
+            <mat-card-subtitle>{{
+              productObj.productShortName
+            }}</mat-card-subtitle>
           </mat-card-header>
-          <img matCardImage src="Card wide image source">
-          <mat-card-content>
-            Text content
-          </mat-card-content>
+          <!-- <img matCardImage src="Card wide image source" /> -->
+          <mat-card-content> Text content </mat-card-content>
           <mat-card-actions align="start">
             <!-- <button mat-button (click)="onAction1">Action1</button> -->
-
           </mat-card-actions>
-          <mat-card-footer>
-            Footer
-          </mat-card-footer>
+          <mat-card-footer> Footer </mat-card-footer>
         </mat-card>
 
         <mat-card>
           <mat-card-header>
-            <mat-card-title>{{productObj.productName}}</mat-card-title>
-            <mat-card-subtitle>{{productObj.productShortName}}</mat-card-subtitle>
+            <mat-card-title>{{ productObj.productName }}</mat-card-title>
+            <mat-card-subtitle>{{
+              productObj.productShortName
+            }}</mat-card-subtitle>
           </mat-card-header>
-          <img matCardImage src="Card wide image source">
-          <mat-card-content>
-            Text content
-          </mat-card-content>
+          <!-- <img matCardImage src="Card wide image source" /> -->
+          <mat-card-content> Text content </mat-card-content>
           <mat-card-actions align="start">
             <!-- <button mat-button (click)="onAction1">Action1</button> -->
-
           </mat-card-actions>
-          <mat-card-footer>
-            Footer
-          </mat-card-footer>
+          <mat-card-footer> Footer </mat-card-footer>
         </mat-card>
 
         <mat-card>
           <mat-card-header>
-            <mat-card-title>{{productObj.productName}}</mat-card-title>
-            <mat-card-subtitle>{{productObj.productShortName}}</mat-card-subtitle>
+            <mat-card-title>{{ productObj.productName }}</mat-card-title>
+            <mat-card-subtitle>{{
+              productObj.productShortName
+            }}</mat-card-subtitle>
           </mat-card-header>
-          <img matCardImage src="Card wide image source">
-          <mat-card-content>
-            Text content
-          </mat-card-content>
+          <!-- <img matCardImage src="Card wide image source" /> -->
+          <mat-card-content> Text content </mat-card-content>
           <mat-card-actions align="start">
             <!-- <button mat-button (click)="onAction1">Action1</button> -->
-
           </mat-card-actions>
-          <mat-card-footer>
-            Footer
-          </mat-card-footer>
+          <mat-card-footer> Footer </mat-card-footer>
         </mat-card>
       </mat-card-content>
-      <mat-card-actions>
-
-      </mat-card-actions>
+      <mat-card-actions> </mat-card-actions>
     </mat-card>
   </div>
   <div class="product-new" *ngIf="isSidePanelVisible">
@@ -70,12 +59,85 @@
       <mat-card-header>
         <mat-card-title>Product New</mat-card-title>
         <button mat-button color="accent" (click)="close()">Cancel</button>
-
       </mat-card-header>
       <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input
+            [(ngModel)]="productObj.name"
+            matInput
+            placeholder="Name of product"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>SKU</mat-label>
+          <input
+            [(ngModel)]="productObj.productSku"
+            matInput
+            placeholder="SKU of product"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>price</mat-label>
+          <input
+            [(ngModel)]="productObj.productPrice"
+            matInput
+            placeholder="Price of product"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Short Name</mat-label>
+          <input
+            [(ngModel)]="productObj.productShortName"
+            matInput
+            placeholder="Short Name of product"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input
+            [(ngModel)]="productObj.productDescription"
+            matInput
+            placeholder="Description of product"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Create Date</mat-label>
+          <input
+            [(ngModel)]="productObj.cretedDate"
+            matInput
+            placeholder="Create date of product"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Delivery</mat-label>
+          <input
+            [(ngModel)]="productObj.deleiveryTimeSpan"
+            matInput
+            placeholder="Delivery"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select [(ngModel)]="productObj.categoryId">
+            <mat-option *ngFor="let cat of categoryList" [value]="cat.id">{{
+              cat.name
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Image</mat-label>
+          <input
+            [(ngModel)]="productObj.productImageUrl"
+            matInput
+            placeholder="Image of product"
+          />
+        </mat-form-field>
 
       </mat-card-content>
       <mat-card-actions>
+        <button mat-button (click)="createProduct()" color="primary">Create</button>
       </mat-card-actions>
     </mat-card>
   </div>

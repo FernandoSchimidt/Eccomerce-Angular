@@ -1,10 +1,14 @@
 <mat-toolbar color="primary">
   <span>User Management</span>
   <div class="spacer"></div>
-    <a mat-button>Home</a>
-    <a mat-button>About</a>
-    <a mat-button>Contact</a>
-  </mat-toolbar>
-  <div class="container-fluid">
-    <router-outlet></router-outlet>
-  </div>
+  <a mat-button>Home</a>
+  <a mat-button routerLink="categories" routerLinkActive="router-link-active"
+    >Category</a
+  >
+  <a mat-button routerLink="products" routerLinkActive="router-link-active"
+    >Product</a
+  >
+</mat-toolbar>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
