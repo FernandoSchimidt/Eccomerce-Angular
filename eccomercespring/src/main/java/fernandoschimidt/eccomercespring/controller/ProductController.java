@@ -2,6 +2,8 @@ package fernandoschimidt.eccomercespring.controller;
 
 import fernandoschimidt.eccomercespring.model.Product;
 import fernandoschimidt.eccomercespring.service.ProductService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,12 +20,12 @@ public class ProductController {
     }
 
     @PostMapping
-    private Product create(@RequestBody Product product) {
-        return productService.create(product);
+    public ResponseEntity<Product> create(@RequestBody Product product) {
+        return new ResponseEntity<>(productService.create(product), HttpStatus.OK);
     }
 
     @GetMapping
-    private List<Product> productList() {
-        return productService.listAll();
+    public ResponseEntity<List<Product>> productList() {
+        return new ResponseEntity<>(productService.listAll(), HttpStatus.OK);
     }
 }
